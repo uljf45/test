@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+	<meta content="yes" name="apple-touch-fullscreen"> 
+	<meta content="telephone=no,email=no" name="format-detection"> 
+	<script src="/js/flexible.js"></script>
+	<script type="text/javascript" src="/js/dom7.js"></script>
+	<script type="text/javascript" src="/js/fastclick.min.js"></script>
+	<script>
+	 	if ('addEventListener' in document) {  
+		    document.addEventListener('DOMContentLoaded', function() {  
+		        FastClick.attach(document.body);  
+		    }, false);  
+		}  
+	</script>
+	<link rel="apple-touch-icon" href="/favico.png"> 
+	<link rel="Shortcut Icon" href="/favico.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="/css/orderlist.css">
+	<link rel="stylesheet" href="/font/ux_1472990929_7045145/iconfont.css">
+	<!-- <link rel="stylesheet" href="/css/swiper.min.css"> -->
+	<title>仿手淘-物流</title>
+</head>
+<body>
+	<div class="view">
+		<div class="scroll-view">
+			<div class="top-fixed">
+				<header class="nav-bar">
+					<div class="back-btn">返回<span class="back-btn-bg"></span></div>
+					<div class="nav-menu">
+						<span class="nav-menu-btn">物流订单</span><span class="icon-font nav-menu-btn">&#xe617;</span>
+						<div class="nav-items-wrap">
+							<ul class="nav-items">
+								<li class="nav-item"><a href="#"><span>待付款</span><em>0</em></a></li>
+								<li class="nav-item"><a href="#"><span>待发货</span><em>0</em></a></li>
+								<li class="nav-item"><a href="#"><span>待收货</span><em>0</em></a></li>
+								<li class="nav-item"><a href="#"><span>待评价</span><em>0</em></a></li>
+								<li class="nav-item"><a href="#"><span>三个月内订单</span><em>0</em></a></li>
+								<li class="nav-item"><a class="active" href="#"><span >三个月前订单</span><em>0</em></a></li>
+								<li class="nav-item"><a href="#"><span>退款中</span><em>0</em></a></li>
+							</ul> 
+							<span class="triangle-up"></span>
+						</div>
+					</div>
+				</header>
+			</div>
+			<div class="scroll-wrap ">
+				<div class="scroll-content swiper-wrapper ">
+					<div id="content" class="swiper-slide">
+						<div class="content-empty">
+							<img src="/images/order-empty.png" alt="">
+							<p>亲, 您没有该状态的订单信息!</p>
+						</div>
+						<div class="list">
+							<div class="list-item">去购物 <span class="icon-font">&#xe60c;</span></div>
+							<div class="list-item">查看我的收藏夹 <span class="icon-font">&#xe60c;</span></div>
+						</div>
+					</div>
+					<div class="page-bottom swiper-slide">
+						<div class="page-bottom-nav">
+							<div class="user-info">
+								<a href="#" class="user-nickname">test11</a>
+								<a href="" class="user-logout">退出</a>
+							</div>
+							<div class="gotop">Top <b></b></div>
+						</div>
+						<div class="copyright swiper-slide">
+							<a class="link-pc">电脑版</a>
+							<div class="copyright-info">© 2014 浙B2-20080224 <a href="#">服务中心</a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fullpage-shade">
+			
+		</div>
+		<div class="circle circle--hide">
+		<!-- <div class="circle "> -->
+			<div class="circle-item circle__home bg-none">
+				<a href="/"></a>
+			</div>		
+			<div class="circle-item circle__wang bg-none">
+				<a href="/"></a>
+			</div>		
+		</div>
+		<div class="taoplus">
+			<div class="taoplus-word"></div>
+		</div>
+	</div>
+	<script src="/js/swiper-3.3.1.min.js"></script>
+	<script>
+		(function(){
+			var $ = window.Dom7;
+			$('.back-btn').click(function(event) {
+				window.location.href = '/';
+			});
+			$('.nav-menu-btn').click(function(event) {
+				if($('.nav-items-wrap').css('display') =="none"){
+					$('.nav-items-wrap').show()
+					$('.nav-menu-btn.icon-font').html('&#xe616;');
+				}else { 
+					$('.nav-menu-btn.icon-font').html('&#xe617;');
+					$('.nav-items-wrap').hide(); 
+				}
+			});
+			$('.taoplus').click(function(event) {
+				if($(this).hasClass('taoplus--gray') ){
+					$(this).removeClass('taoplus--gray');
+					$(".fullpage-shade").addClass('fullpage-shade--animate');
+					$('.circle').addClass('circle--hide')
+					$('.fullpage-shade').transitionEnd(function	(){
+					 	$(this).hide();
+					 	$(".fullpage-shade").removeClass('fullpage-shade--animate');
+					});
+				}else {
+					$(this).addClass('taoplus--gray');
+					$('.fullpage-shade').show();
+					$('.circle').removeClass('circle--hide')
+					$(".fullpage-shade").removeClass('fullpage-shade--animate');
+				}
+			});
+			$('.circle-item a').click(function(event) {
+				$(this).parent().removeClass('bg-none');
+				var This = this;
+				setTimeout(function(){ 
+					window.location.href = This.href ;
+				}, 500);
+				event.preventDefault();
+			});
+			var swiper = new Swiper('.scroll-wrap', {
+				direction: 'vertical',
+				slidesPerView: 'auto',
+				freeMode: true,
+			});	
+
+		}  )();
+	</script>
+</body>
+</html>

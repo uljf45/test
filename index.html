@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="UTF-8">
+	 <!--允许全屏--> 
+	 <meta content="yes" name="apple-mobile-web-app-capable"> 
+	 <meta content="yes" name="apple-touch-fullscreen"> 
+	 <meta content="telephone=no,email=no" name="format-detection"> 
+	 <script src="/js/flexible.js"></script>
+	 <script type="text/javascript" src="/js/dom7.js"></script>
+	 <script type="text/javascript" src="/js/fastclick.min.js"></script>
+	 <script>
+	 	if ('addEventListener' in document) {  
+		    document.addEventListener('DOMContentLoaded', function() {  
+		        FastClick.attach(document.body);  
+		    }, false);  
+		}  
+	 </script>
+	 <link rel="apple-touch-icon" href="/favico.png"> 
+	 <link rel="Shortcut Icon" href="/favico.png" type="image/x-icon"> 
+	  <link rel="stylesheet" href="/css/swiper.min.css">
+	 <link rel="stylesheet" type="text/css" href="/css/index.css">
+	 <link rel="stylesheet" href="/font/ux_1472990929_7045145/iconfont.css">
+	 <title>仿手淘</title>
+	 <script>
+	 	function fnLoad() {
+	 		var bImgLoad=true;
+			var bTime=true;
+			var iTime = new Date();
+			var timer = null;
+	 		  var $ = window.Dom7;
+	 		  $('body').on('webkitTransitionEnd', $('#view-0'),end);
+	 		  $('body').on('transitionend', $('#view-0'),end);
+	 		  timer = setInterval(function () {
+	 		  	  if(new Date().getTime() - iTime >2000 ){
+	 		  	  	bTime = true;
+	 		  	  }
+	 		  	  if(bImgLoad && bTime){
+	 		  	  	clearInterval(timer);
+	 		  	  	$('#view-0').css('opacity', 0);
+	 		  	  	$('#view-0').css('zIndex', -1);
+	 		  	  }
+	 		  }, 1000);
+	 		  function end(){
+	 		  	$('#view-0').remove();
+	 		  }
+	 	}
+	 </script>
+</head>
+<body data-ctrl-name="pageview" class="fullscreen" >
+	<div id="view-0" style="">
+		仿淘宝
+	</div>	
+	<!-- <div id="view-0" style="width:100%;height:100%; transition:0.7s;text-align:center; color:white;vertical-align: middle;">
+		<div style=" position: absolute;left:0;top:0;right:0;bottom:0; margin:auto;text-align: center;font-size:2rem;line-height:2rem;height: 2rem;   ">仿淘宝</div>
+	</div> -->
+	<script>
+		fnLoad();
+	</script>
+	<div id="view-1" name="index" class="view">
+		<div data-ctrl-name="scrollview" data-direction="vertical">
+			<div class="top-fixed">
+				<header>
+					<div id="search-placeholder">
+						<span>寻找宝贝店铺</span>
+					</div>
+				</header>
+			</div>
+			<div class="scroll-wrap swiper-container">
+				<div class="scroll-content swiper-wrapper" >
+					<div id="content" class="swiper-slide">
+						<section data-group="1" >
+							<div class="banner1">
+								  <div class="swiper-container2">
+								        <div class="swiper-wrapper">
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/1.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/2.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/3.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/4.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/5.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/6.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/7.jpg"> </a></div>
+								            <div class="swiper-slide"><a href="#"> <img src="/images/banner/8.jpg"> </a></div>
+								        </div>
+								        <!-- Add Pagination -->
+								        <div class="swiper-pagination"></div>
+								    </div>
+							</div>
+							<div class="entrance">
+								<div class="vertical-view">
+									<div class="horizontal-view">
+										<div><a href="#"><img src="/images/content/entrance1.png" alt=""><span>天猫</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance2.png" alt=""><span>聚划算</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance3.png" alt=""><span>到家</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance4.png" alt=""><span>外卖</span></a></div>
+									</div>
+									<div class="horizontal-view">
+										<div><a href="#"><img src="/images/content/entrance5.png" alt=""><span>充值</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance6.png" alt=""><span>阿里旅行</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance7.png" alt=""><span>领金币</span></a></div>
+										<div><a href="#"><img src="/images/content/entrance8.png" alt=""><span>分类</span></a></div>
+									</div>
+								</div>
+							</div>
+							<div class="headline">
+								<div class="vertical-view">
+									<div class="separator"></div>
+									<div class="ul-wrapper">
+										<ul>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">一个牛油果，居然能玩出这么多花样？</a></li>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">秋天来了，你的肺还好吗？快来看这些润肺食品</a></li>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">有了这个，再也不用担心脸上出油了！</a></li>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">大学新生军训必备物品清单，你值得拥有！</a></li>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">闷竿钓法的各种讲究</a></li>
+											<li class="horizontal-view"><span></span><em>最新</em><a href="http://www.baidu.com">＃99酒水节＃总理们竟然都来天猫卖酒了</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="gray-border-home"></div>
+							<div class="rushby horizontal-view">
+								<div class="box-4rem">
+									<div class="counter" data-enddate="Fri Sep 09 2016 13:59:59 GMT+0800 (中国标准时间)">
+										<span role='h'>00</span>
+										<span class="dot">:</span>
+										<span role="m">00</span>
+										<span class="dot">:</span>
+										<span role="s">00</span>
+									</div>
+									<img src="/images/content/rushby1.jpg" alt="">
+								</div>
+								<div class="vertical-gray" ></div>
+								<div class="box-5p98rem vertical-view">
+									<div class="h1p92rem">
+										<img src="/images/content/rushby2.jpg" alt="">
+									</div>
+									<div class="h2p89rem horizontal-view" >
+										<div class="box-3rem"><img src="/images/content/rushby3.jpg" alt=""></div>
+										<div class="box-3rem"><img src="/images/content/rushby4.jpg" alt=""></div>
+									</div>
+								</div>
+							</div>
+							<div class="horizontal-gray-d9"></div>
+							<div class="horizontal-gray-e0"></div>
+							<div class="cheap">
+								<div class="content-title horizontal-view">
+									<div></div><span></span><em>超实惠</em><p></p>
+								</div>
+								<div class="horizontal-view">
+									<div class="box-4rem"><img       class="swiper-lazy" data-src="/images/content/cheap1.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap2.png" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap3.png" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap4.png" alt=""></div> 
+								</div>
+								<div class="horizontal-gray-eb"></div>
+								<div class="horizontal-view">
+									<div class="box-4rem"><img       class="swiper-lazy" data-src="/images/content/cheap8.png" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap6.png" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap7.png" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/cheap5.png" alt=""></div> 
+								</div>
+								<div class="horizontal-gray-d9"></div>
+								<div class="horizontal-gray-e0"></div>
+							</div>
+							<div class="quality">
+								<div class="content-title horizontal-view">
+									<div></div><span></span><em>好品质</em><p></p>
+								</div>
+								<div class="horizontal-view">
+									<div class="box-6rem"><img class="swiper-lazy" data-src="/images/content/quality1.jpg" alt=""></div>
+									<div class="vertical-gray"></div>
+									<div class="box-4rem"><img class="swiper-lazy" data-src="/images/content/quality2.jpg" alt=""></div>
+								</div>
+								<div class="horizontal-gray-eb"></div>
+								<div class="horizontal-view">
+									<div class="box-2rem"><img class="swiper-lazy" data-src="/images/content/quality3.jpg"></div><div class="vertical-gray"></div>
+									<div class="box-2rem"><img class="swiper-lazy" data-src="/images/content/quality4.jpg"></div><div class="vertical-gray"></div>
+									<div class="box-2rem"><img class="swiper-lazy" data-src="/images/content/quality5.jpg"></div><div class="vertical-gray"></div>
+									<div class="box-2rem"><img class="swiper-lazy" data-src="/images/content/quality6.jpg"></div><div class="vertical-gray"></div>
+									<div class="box-2rem"><img class="swiper-lazy" data-src="/images/content/quality7.jpg"></div>
+								</div>
+								<div class="horizontal-gray-e3"></div>
+							</div>
+							<div class="feature">
+								<div class="content-title horizontal-view">
+									<div></div><span></span><em>有特色</em><p></p>
+								</div>		
+								<div class="horizontal-view">
+									<div class="box-4rem"><img       class="swiper-lazy" data-src="/images/content/feature1.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature2.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature3.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature4.jpg" alt=""></div> 
+								</div>	
+								<div class="horizontal-gray-eb"></div>
+								<div class="horizontal-view">
+									<div class="box-4rem"><img       class="swiper-lazy" data-src="/images/content/feature5.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature8.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature6.jpg" alt=""></div> <div class="vertical-gray"></div>
+									<div class="box-1p98rem"><img class="swiper-lazy" data-src="/images/content/feature7.jpg" alt=""></div> 
+								</div>
+								<div class="horizontal-gray-eb"></div> 
+							</div>
+							<div class="banner2">
+								<a href="/my.html">
+									<img class="swiper-lazy" data-src="/images/banner/t1.jpg" alt="">
+								</a>
+							</div>
+							<div class="hotmarket">
+								<div class="hotmarket-title horizontal-view">
+									<span></span><em>热门市场</em><a href="/my.html">更多<strong>&gt;</strong></a>
+								</div>
+								<div class="horizontal-view">
+									<div class="box-5rem vertical-view">
+										<div>品质穿搭</div>
+										<div>质造品位</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket1.jpg" alt=""></div>
+									</div>
+									<div class="vertical-gray"></div>
+									<div class="box-5rem vertical-view">
+										<div>腔调</div>
+										<div>潮流尖货</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket2.jpg" alt=""></div>
+									</div>									
+								</div>
+								<div class="horizontal-gray-e3"></div>
+								<div class="horizontal-view">
+									<div class="box-2p5rem">
+										<div>腔调</div>
+										<div>潮流尖货</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket3.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div>摩登潮童</div>
+										<div>时尚穿搭</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket4.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div>宿舍时代</div>
+										<div>宿舍用品</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket5.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div>彩妆教室</div>
+										<div>彩妆精选</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket6.jpg"></div></div>
+								</div>
+								<div class="horizontal-gray-e3"></div>
+								<div class="horizontal-view">
+									<div class="box-2p5rem">
+										<div>型男社</div>
+										<div>Man有调性</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket7.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div>潮生活</div>
+										<div>科技潮品</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket8.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div class="accent">表饰爱</div>
+										<div>大胆饰爱</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket9.jpg"></div>
+									</div><div class="vertical-gray"></div>
+									<div class="box-2p5rem">
+										<div class="accent">干货食材</div>
+										<div>巧妇最爱逛</div>
+										<div><img class="swiper-lazy" data-src="/images/content/hotmarket10.jpg"></div></div>
+								</div>
+								<div class="horizontal-gray-d9"></div>
+								<div class="horizontal-gray-e0"></div>
+							</div>
+							<div class="banner3">
+								<img src="/images/banner/t2.jpg" alt="">
+							</div>
+							<div class="shop vertical-view">
+								<div class="shop-title horizontal-view">
+									<div class="horizontal-view">
+										<div class="square"></div>
+										<span>每日好店</span>
+									</div>
+									<a class="horizontal-view" href="/my.html">更新50个好店<em></em></a>
+								</div>
+								  <div class="swiper-container3">
+								        <div class="swiper-wrapper">
+								            <div class="swiper-slide">
+								            	<div class="half">
+									            	<a href="/my.html" class="horizontal-view"> 
+									            		<img class="swiper-lazy" data-src="/images/content/shop1.jpg"> 
+													<span class="vertical-view">
+										            		<img class="swiper-lazy" data-src="/images/content/shop2.jpg"> 
+										            		<img class="swiper-lazy" data-src="/images/content/shop3.jpg"> 
+													</span>
+									            	</a>
+									            	<p>今日推荐—1天3波</p>
+								            	</div>
+								            	<div class="half">
+									            	<a href="/my.html" class="horizontal-view"> 
+									            		<img class="swiper-lazy" data-src="/images/content/shop4.jpg"> 
+													<span class="vertical-view">
+										            		<img class="swiper-lazy" data-src="/images/content/shop5.jpg"> 
+										            		<img class="swiper-lazy" data-src="/images/content/shop6.jpg"> 
+													</span>
+									            	</a>
+									            	<p>吃吃吃</p>
+								            	</div>
+								            </div>
+								            <div class="swiper-slide">
+								            	<div class="half">
+									            	<a href="/my.html" class="horizontal-view"> 
+									            		<img class="swiper-lazy" data-src="/images/content/shop7.jpg"> 
+													<span class="vertical-view">
+										            		<img class="swiper-lazy" data-src="/images/content/shop8.jpg"> 
+										            		<img class="swiper-lazy" data-src="/images/content/shop9.jpg"> 
+													</span>
+									            	</a>
+									            	<p>生活家—爱的杂货铺</p>
+								            	</div>
+								            	<div class="half">
+									            	<a href="/my.html" class="horizontal-view"> 
+									            		<img class="swiper-lazy" data-src="/images/content/shop10.jpg"> 
+													<span class="vertical-view">
+										            		<img class="swiper-lazy" data-src="/images/content/shop11.jpg"> 
+										            		<img class="swiper-lazy" data-src="/images/content/shop12.jpg"> 
+													</span>
+									            	</a>
+									            		<p>包包控</p>
+								            	</div>
+								            </div>
+								        </div>
+								        <!-- Add Pagination -->
+								        <div class="swiper-pagination"></div>
+								    </div>
+							</div>
+						</section>
+						<section data-group="2">
+							<div class="guess-title" >
+								<span>猜你喜欢</span>
+							</div>
+							<div id="guessitem" style="">
+							<div class="loading">
+								<span>正在为你加载更多内容...</span>
+							</div>
+								<section >
+								<!-- <div class="single_titem">
+									<div class="single_titem_wrap vertical-view">
+										<div data-background="images/content/item1.jpg" class="swiper-lazy"></div>
+										<p>[为你推荐]【双人床】 白橡木 全实木 极简 北欧 日式 现代皆宜 原创设计</p>
+										<span>￥3299.0</span>
+									</div>
+								</div> -->
+								</section>
+							</div>
+						</section>
+						<div class="pagebottom">
+							<div class="buttons horizontal-view">
+								<a href="/login.html">登录</a>
+								<a href="/register.html">注册</a>
+								<a href="/my.html">电脑版</a>
+								<a href="/feedback.html">用户反馈</a>
+							</div>
+							<div class="copyright">
+								2016 浙 B2-20080224 <a href="/my.html">服务中心</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="gotop" class="gotop">
+					<span class="iconfont">&#xe604;</span>
+					顶部
+				</div>
+			</div>
+			<!-- <div class="force-repaint"></div> -->
+			<div class="bottom-fixed">
+				<footer>
+					<a href="#">
+						<span>&#xe606;</span>
+						<p>首页</p> 
+					</a>
+					<a href="/orderlist.html">
+						<span>&#xe602;</span>
+						<p>物流</p>
+					</a>
+					<a href="#">
+						<span>&#xe605;</span>
+						<p>购物车</p>
+					</a>
+					<a href="/my.html">
+						<span>&#xe607;</span>
+						<p>我的淘宝</p>
+					</a>
+					<a href="#">
+						<span>&#xe603;</span>
+						<p>更多</p>
+					</a>
+				</footer>
+			</div>
+		</div>
+	</div>
+    <script src="/js/swiper-3.3.1.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

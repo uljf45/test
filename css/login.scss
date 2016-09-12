@@ -1,0 +1,52 @@
+@charset "utf-8";//必须设置了这个才能编译有中文的注释
+@import "prefixes";
+@function px2rem($px, $base-font-size: 37.5px) {
+    @return ($px / $base-font-size) * 1rem;
+}
+
+/*reset start*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, 
+button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0; }
+a { text-decoration: none; }
+em { font-style: normal; }
+input, select, textarea {font-size: 100%; } 
+html * { outline: 0; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: transparent; }
+html, body { font-family: sans-serif;  }
+/*reset end*/
+
+html { background-color: #f0f0f0; }
+header { height: px2rem(44px); line-height: px2rem(44px); font-size: px2rem(17px); color: #000; text-align: center; 
+	background-color: #f7f7f8; border-bottom: 1px solid #c8c8c8; }
+section { padding-top: px2rem(17px); }
+
+.login-form { font-size: px2rem(16px); }
+
+.field { @include box-sizing(border-box); @include display-flex(); padding: px2rem(14px) px2rem(10px); 
+	font-size: px2rem(16px); background-color: #ffffff; border-bottom: 1px solid #dddddd; } 
+.field .label { width: px2rem(75px); }	
+.field-control { @include flex(1); @include input-placeholder( input ) { color: #e3e3e3; } }
+.field-control input { width:100%; border: 0; }
+.icon-clear{ visibility: hidden; }
+.icon-clear .iconfont { font-size: px2rem(16px); color: #6C6C6C; }
+
+.submit{ padding: px2rem(18px) px2rem(10px); @include box-sizing(border-box);  }
+.submit .button{ border: 0; border-radius: 5px; background-color: #f40;  color: #fff;
+	line-height: px2rem(48px); height: px2rem(48px); width: 100%;   }
+.submit .button:disabled { color: #ffa286; }
+
+.other-link{ padding: 0 px2rem(10px); overflow: hidden; }  
+.other-link a{ color: #fe581c; }
+.other-link a:nth-of-type(1) { float:left; }
+.other-link a:nth-of-type(2) { float:right; }
+
+.dialog-mask { display: none; width: 100%; height: 100%; background-color: #000; opacity: 0.6; position:fixed; z-index:10; top:0; left:0;  }
+.dialog{ display: none; @include font-dpr(16px); line-height: 1.2; color: #6C6C6C; width: px2rem(300px); margin:auto;
+	background-color: #fff; border-radius: px2rem(8px); left:0; top:50%; z-index: 20;text-align: center;
+	position: fixed;  @include transform(translate(0, -50%)); left: 0; right: 0; padding-top: px2rem(20px);  }
+.dialog-title { font-weight: bold;  }
+.dialog-content { padding: px2rem(20px) px2rem(24px); }
+.dialog-buttons { color: #f40; border-top: 1px solid #eeeeee; @include display-flex(); width: 100%; }
+.dialog-btn:nth-of-type(1) { border-left: none; }
+.dialog-btn { display: block; border-left: 1px solid #eeeeee; width: 50%; height: px2rem(56px); line-height: px2rem(56px);  }
+
+

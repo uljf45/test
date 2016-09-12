@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+	<meta content="yes" name="apple-touch-fullscreen"> 
+	<meta content="telephone=no,email=no" name="format-detection"> 
+	<script src="/js/flexible.js"></script>
+	<script type="text/javascript" src="/js/dom7.js"></script>
+	<script type="text/javascript" src="/js/fastclick.min.js"></script>
+	<script>
+	 	if ('addEventListener' in document) {  
+		    document.addEventListener('DOMContentLoaded', function() {  
+		        FastClick.attach(document.body);  
+		    }, false);  
+		}  
+	</script>
+	<link rel="apple-touch-icon" href="/favico.png"> 
+	<link rel="Shortcut Icon" href="/favico.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="/css/swiper.min.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/font/ux_1472990929_7045145/iconfont.css">
+	<title>仿手淘-用户登录</title>
+</head>
+<body>
+	<header>淘宝账户登录</header>
+	<section>
+		<form id="loginForm" class="login-form" action="" method="post">
+			<div class="field">
+				<div class="label">账户</div>
+				<div class="field-control">
+					<input type="text" name="username" placeholder="手机号/邮箱/会员名">
+				</div>
+				<div class="icon-clear">
+					<i class="iconfont">&#xe600;</i>
+				</div>
+			</div>
+			<div class="field">
+				<div class="label">登录密码</div>
+				<div class="field-control">
+					<input type="password" name="password" placeholder="请输入密码">
+				</div>
+				<div class="icon-clear">
+					<i class="iconfont">&#xe600;</i>
+				</div>
+			</div>
+			<div class="submit">
+				<input id='submit-btn' class="button" type="submit" value="登 录" disabled="disabled">
+			</div>
+			<div class="other-link">
+				<a href="/register.html">免费注册</a>
+				<a id='forget' href="#">忘记密码</a>
+			</div>
+		</form>
+	</section>
+	
+	<div class="dialog">
+		<div class="dialog-title">忘记密码怎么办?</div>
+		<div class="dialog-content">
+			亲,当前淘宝网页版暂不支持密码找回，请打开手机淘宝进行找密哟
+		</div>
+		<div class="dialog-buttons">
+			<span class="dialog-btn dialog-btn-cancel">返回</span>
+			<span class="dialog-btn">下载手机淘宝</span>
+		</div>
+	</div>
+	<div class="dialog-mask">
+	</div>
+
+	<script>
+		var $ = window.Dom7;
+		var oForm = document.getElementById("loginForm");
+		var aField = oForm.getElementsByClassName('field');
+		var aInput = $(oForm).find('input[type="text"],input[type="password"],input[type="number"],input[type="tel"],'+
+			'input[type="email"],input[type="url"],input[type="search"]');
+		var oField = null;
+		for (var i = 0; i < aField.length; i++) {
+			oField =  aField[i];
+			handleField(oField);
+		}
+		$('#forget').click(function(event) {
+			$('.dialog').show();
+			$('.dialog-mask').show();
+		});
+		$('.dialog-btn-cancel').click(function(event) {
+			$('.dialog').hide();
+			$('.dialog-mask').hide();
+		});
+
+		function checkSubmit( ){
+				for (var i = 0; i < aInput.length; i++) {
+					if(aInput[i].value.length==0)  { $('#submit-btn').attr('disabled', 'disabled');  return;}
+				}
+				$('#submit-btn').removeAttr('disabled');
+		}
+
+		function handleField(oField){
+			var oInput = oField.getElementsByTagName('input')[0];
+			var oIcon = oField.getElementsByClassName('icon-clear')[0];
+			$(oIcon).click(function(){
+				oInput.value = "";
+				this.style.visibility = "hidden";
+			});
+			$(oField).click(function(event) {
+				$(oInput).focus();
+			});
+			$(oInput).focus(function(event) {
+				if(this.value.length>0)  {oIcon.style.visibility='visible';}
+				else {oIcon.style.visibility = 'hidden';}
+				checkSubmit();
+			});
+			$(oInput).on('input', function  () {
+				 if(this.value.length>0) oIcon.style.visibility='visible';
+				else oIcon.style.visibility = 'hidden';
+				checkSubmit();
+			});
+			$(oInput).blur(function(event) {
+					oIcon.style.visibility = 'hidden';
+				checkSubmit();
+			});
+
+		}
+	</script>
+</body>
+</html>
